@@ -125,9 +125,11 @@ p {
 }
 
 blockquote {
-  padding: 0;
+  padding: 10px 20px;
   font-style: italic;
-  text-align: center;
+  font-size: 0.95rem;
+  color: gray;
+  border-left: 5px solid #eee;
 }
 
 figure {

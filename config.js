@@ -1,18 +1,26 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://mrtan.page',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-  copyright: '© All rights reserved.',
+  title: 'Blog by Mr Tan',
+  subtitle: 'Less is more',
+  copyright: '© 2019 All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: 'UA-116293113-1',
   menu: [
     {
       label: 'Articles',
       path: '/'
+    },
+    {
+      label: 'Tags',
+      path: '/tags'
+    },
+    {
+      label: 'Category',
+      path: '/categories'
     },
     {
       label: 'About me',
@@ -24,16 +32,20 @@ module.exports = {
     }
   ],
   author: {
-    name: 'John Doe',
-    photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    name: 'Mr Tan',
+    photo: '/photo.png',
+    bio: 'Less is more',
     contacts: {
-      email: '#',
-      telegram: '#',
+      // email: '#',
+      // telegram: '#',
       twitter: '#',
-      github: '#',
+      // github: '#',
       rss: '#',
-      vkontakte: '#'
+      vkontakte: '#',
+      email: 'freemrtan@gmail.com',
+      telegram: 'ggggxiaolong',
+      github: 'ggggxiaolong',
+      jianshu: 'b8cddfa2e3e8'
     }
   }
 };

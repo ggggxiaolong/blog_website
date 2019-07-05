@@ -18,6 +18,7 @@ const useSiteMetadata = () => {
                 github
                 rss
                 vkontakte
+                jianshu
               }
             }
             menu {

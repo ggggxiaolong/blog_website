@@ -94,7 +94,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-katex',
+            resolve: 'gatsby-remark-katex',// math
             options: {
               strict: 'ignore'
             }
@@ -107,10 +107,15 @@ module.exports = {
             resolve: 'gatsby-remark-responsive-iframe',
             options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
           },
+          {
+            resolve:'gatsby-remark-smartypants',
+            options:{
+              quotes: true,
+            }
+          },
           'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
+          'gatsby-remark-copy-linked-files'
         ]
       }
     },
@@ -172,7 +177,7 @@ module.exports = {
         background_color: '#FFF',
         theme_color: '#F7A046',
         display: 'standalone',
-        icon: 'static/photo.jpg'
+        icon: 'static/photo.png'
       },
     },
     'gatsby-plugin-offline',

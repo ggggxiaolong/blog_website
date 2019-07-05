@@ -13,7 +13,7 @@ type Props = {
 const Contacts = ({ contacts }: Props) => (
   <div className={styles['contacts']}>
     <ul className={styles['contacts__list']}>
-      {Object.keys(contacts).map((name) => (
+      {Object.keys(contacts).filter((name) => contacts[name] !== '#').map((name) => (
         <li className={styles['contacts__list-item']} key={name}>
           <a
             className={styles['contacts__list-item-link']}
@@ -21,7 +21,7 @@ const Contacts = ({ contacts }: Props) => (
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Icon icon={getIcon(name)} />
+            {(name !== 'jianshu')?<Icon icon={getIcon(name)} />:"简"}
           </a>
         </li>
       ))}
