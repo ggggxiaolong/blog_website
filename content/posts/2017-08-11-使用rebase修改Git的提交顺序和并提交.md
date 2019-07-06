@@ -1,14 +1,13 @@
 ---
-layout:     post
-title:      使用 rebase 修改 Git 的提交顺序和并提交
-subtitle:    
-date:       2017-08-11
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: 使用 rebase 修改 Git 的提交顺序和并提交
+date: "2017-08-11T01:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/git_reabase/"
+category: "Git"
 tags:
-    - Android
-    - Git
+    - "Git"
+description: "在使用Git提交文件的时候,有时会不注意提交一些临时的代码,或者修改一些提交的描述,或者合并一些提交,删除一些提交历史.通过rebase指令完成这些操作"
 ---
 
 #### 先说问题 >

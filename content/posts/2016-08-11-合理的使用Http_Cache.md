@@ -1,15 +1,15 @@
 ---
-layout:     post
-title:      合理的使用Http Cache
-subtitle:    
-date:       2016-08-11
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: 合理的使用Http Cache
+date: "2016-08-11T01:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/okhttp_use_cache/"
+category: "Http"
 tags:
-    - Android
-    - Okhttp
-    - Cache
+    - "Android"
+    - "OkHttp"
+    - "Cache"
+description: "关于Http的缓存一些知识,已经怎么结合OKHttp库通过缓存减少Api的请求次数"
 ---
 
 #####啰嗦一下
@@ -30,7 +30,7 @@ tags:
   no-cache表示必须先与服务器确认返回的响应是否被更改，然后才能使用该响应来满足后续对同一个网址的请求。因此，如果存在合适的验证令牌 (ETag)，no-cache 会发起往返通信来验证缓存的响应，如果资源未被更改，可以避免下载。
   相比之下，no-store更加简单，直接禁止浏览器和所有中继缓存存储返回的任何版本的响应 - 例如：一个包含个人隐私数据或银行数据的响应。每次用户请求该资源时，都会向服务器发送一个请求，每次都会下载完整的响应。
 
-![no-cache.png](http://upload-images.jianshu.io/upload_images/1419533-f535efd5c89a98ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![no-cache.png](/media/1419533-f535efd5c89a98ce.png)
 
 * public和 private
   如果响应被标记为public，即使有关联的 HTTP 认证，甚至响应状态码无法正常缓存，响应也可以被缓存。大多数情况下，public不是必须的，因为明确的缓存信息（例如max-age）已表示 响应可以被缓存。
@@ -45,33 +45,38 @@ tags:
 这是客户端的第一次请求，可以看到服务器的返回头里面Cache-Control字段为mac-age=120，ETag为x234dff。如果客户端在120秒内再次请求这个资源，会直接读取缓存的数据而不是请求服务器（这一步是浏览器自动处理的）。
 ![第二次请求服务器](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/images/http-cache-control.png)
 如果客户端在120后请求这个资源并携带上一次返回的ETag的话，服务器会通过这个ETag检查资源是否更新如果更新返回新的资源，如果没有更新返回304，表示资源没有过期，就像上面图片那样。表示可以继续使用cache的资源并且在120秒内这个资源是有效的。
+
 ####编码
 首先写一个修改response的Interceptor
 
-    import java.io.IOException;
-    import okhttp3.Interceptor;
-    import okhttp3.Request;
-    import okhttp3.Response;
-    
-    public class CacheInterceptor implements Interceptor{
-        @Override    
-        public Response intercept(Chain chain) throws IOException {
-                Request originRequest = chain.request();
-                Request.Builder request = originRequest.newBuilder();
-                Response response = chain.proceed(request.build());
-                return response.newBuilder()
-                              .removeHeader("Cache-Control")
-                              .header("Cache-Control", "public, max-age=5400")//1.5*60*60 一个半小时
-                              .build();    
-        }
+```java
+import java.io.IOException;
+import okhttp3.Interceptor;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class CacheInterceptor implements Interceptor{
+    @Override    
+    public Response intercept(Chain chain) throws IOException {
+            Request originRequest = chain.request();
+            Request.Builder request = originRequest.newBuilder();
+            Response response = chain.proceed(request.build());
+            return response.newBuilder()
+                          .removeHeader("Cache-Control")
+                          .header("Cache-Control", "public, max-age=5400")//1.5*60*60 一个半小时
+                          .build();    
     }
+}
+```
 
 然后设置okhttpClient的cache和Interceptor
 
-    public OkHttpClient provideClient(File cacheDir, CacheInterceptor interceptor){
-            final OkHttpClient.Builder okHttpBuilder = new OkHttpClient.Builder();
-            Cache cache = new Cache(cacheDir, 20*1024*1024);
-            okHttpBuilder.cache(cache);
-            okHttpBuilder.interceptors().add(interceptor);     
-            return okHttpBuilder.build();
-    }
+```java
+public OkHttpClient provideClient(File cacheDir, CacheInterceptor interceptor){
+        final OkHttpClient.Builder okHttpBuilder = new OkHttpClient.Builder();
+        Cache cache = new Cache(cacheDir, 20*1024*1024);
+        okHttpBuilder.cache(cache);
+        okHttpBuilder.interceptors().add(interceptor);     
+        return okHttpBuilder.build();
+}
+```

@@ -1,21 +1,22 @@
 ---
-layout:     post
-title:      AutoValue
-subtitle:   AutoValue_Index
-date:       2016-06-06
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: Okhttp Okhttp_Index
+date: "2016-06-06T01:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/okhttp_okhttp_Index/"
+category: "AutoValue"
 tags:
-    - Android
-    - AutoValue
-    - 翻译
+    - "Android"
+    - "Okhttp"
+    - "翻译"
+description: "安卓开发中使用最多的网络请求库,通过翻译官方的文档来系统的学习一下.了解更多okhttp的功能,在使用这个库的时候能够更加的顺手,遇到问题的时候方便排查."
 ---
 
 [AutoValue](https://github.com/google/auto/tree/master/value)谷歌auto库
 *为Java1.6+生成不可变value class*
 
 > "AutoValue is a great tool for eliminating the drudgery of writing mundane value classes in Java. It encapsulates much of the advice in Effective Java Chapter 2, and frees you to concentrate on the more interesting aspects of your program. The resulting program is likely to be shorter, clearer, and freer of bugs. Two thumbs up."
+>
 > - *Joshua Bloch, author, Effective Java*
 
 ####背景
@@ -42,51 +43,59 @@ AutoValue的使用很简单：**你只需要写一个抽象类，然后AutoValue
 #####对于value class
 用抽象类创建你的value class，为你想要的属性设置一个抽象访问器，并在类上添加@AutoValue注解。
 
-    import com.google.auto.value.AutoValue;
-    
-    @AutoValue
-    abstract class Animal {
-        static Animal create(String name, int numberOfLegs) {
-            // See "How do I ..?" below for nest classes.
-            return new AutoValue_Animal(name, numberOfLegs);
-        }
-    
-        abstract String name();
-        abstarct int numberOfLegs();
+```java
+import com.google.auto.value.AutoValue;
+
+@AutoValue
+abstract class Animal {
+    static Animal create(String name, int numberOfLegs) {
+        // See "How do I ..?" below for nest classes.
+        return new AutoValue_Animal(name, numberOfLegs);
     }
+
+    abstract String name();
+    abstarct int numberOfLegs();
+}
+```
 在实际使用中应该注意，一些类和方法应该是public 和带有 Javadoc，我们除了这些是为了例子简短。
 #####对于<code>pom.xml</code>
 Maven用户应该添加在项目的<code>pom.xml</code>中添加如下内容：
 
-    <dependency> 
-        <groupId>com.google.auto.value</groupId> 
-        <artifactId>auto-value</artifactId> 
-        <version>1.2</version> 
-        <scope>provided</scope>
-    </dependency>
+```xml
+<dependency> 
+    <groupId>com.google.auto.value</groupId> 
+    <artifactId>auto-value</artifactId> 
+    <version>1.2</version> 
+    <scope>provided</scope>
+</dependency>
+```
 Gradle用户应该应该安装注解处理插件 [as described in these instructions](https://plugins.gradle.org/plugin/net.ltgt.apt) 之后在<code>build.gradle</code>脚本添加如下内容：
 
-    dependencies { 
-        compileOnly "com.google.auto.value:auto-value:1.2" 
-        apt "com.google.auto.value:auto-value:1.2"
-    }
+```groovy
+dependencies { 
+    compileOnly "com.google.auto.value:auto-value:1.2" 
+    apt "com.google.auto.value:auto-value:1.2"
+}
+```
 #####使用
 > Your choice to use AutoValue is essentially *API-invisible*. That means that to the consumer of your class, your class looks and functions like any other. The simple test below illustrates that behavior. Note that in real life, you would write tests that actually *do something interesting* with the object, instead of only checking field values going in and out.
 
 选择使用AutoValue基本上是api的无形.这意味者对于你类的使用着，你的类外观和功能像其他的类。下面简单的测试说明了这个特征，在实际应用中你应该写测试，实际的用这个对象做一些有趣的事，而不是只检查field值的改变。
 
-    public void testAnimal() { 
-        Animal dog = Animal.create("dog", 4); 
-        assertEquals("dog", dog.name()); 
-        assertEquals(4, dog.numberOfLegs()); 
-    
-        // You probably don't need to write assertions like these; just illustrating.         
-        assertTrue(Animal.create("dog", 4).equals(dog)); 
-        assertFalse(Animal.create("cat", 4).equals(dog)); 
-        assertFalse(Animal.create("dog", 2).equals(dog)); 
-    
-        assertEquals("Animal{name=dog, numberOfLegs=4}", dog.toString());
-    }
+```java
+public void testAnimal() { 
+    Animal dog = Animal.create("dog", 4); 
+    assertEquals("dog", dog.name()); 
+    assertEquals(4, dog.numberOfLegs()); 
+
+    // You probably don't need to write assertions like these; just illustrating.         
+    assertTrue(Animal.create("dog", 4).equals(dog)); 
+    assertFalse(Animal.create("cat", 4).equals(dog)); 
+    assertFalse(Animal.create("dog", 2).equals(dog)); 
+
+    assertEquals("Animal{name=dog, numberOfLegs=4}", dog.toString());
+}
+```
 #####发生了什么
 AutoValue作为一个标准的注释处理器运行在<code>javac</code>阶段。它会读取你的抽象类并推断实现类应该是怎样。它在你的包下面生成源代码，一个继承你抽象类的实现类：
 * 包访问权限

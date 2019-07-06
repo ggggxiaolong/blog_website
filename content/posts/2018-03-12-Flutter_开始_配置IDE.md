@@ -1,14 +1,14 @@
 ---
-layout:     post
-title:      Flutter
-subtitle:   开始:配置IDE
-date:       2018-03-12
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: Flutter 开始:配置IDE
+date: "2018-03-12T01:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/flutter_setup_install/"
+category: "Flutter"
 tags:
-    - Flutter
-    - 翻译
+    - "Flutter"
+    - "翻译"
+description: "最近在学习Flutter,没有找到相应的中文文档,边学边翻译"
 ---
 
 # 开始 : 配置 IDE

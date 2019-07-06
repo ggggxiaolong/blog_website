@@ -113,8 +113,21 @@ module.exports = {
               quotes: true,
             }
           },
+          {
+            resolve:'gatsby-remark-prismjs',
+            options:{
+              languageExtensions: [
+                {
+                  language: "react",
+                  extend: "jsx",
+                  definition: {
+                    superscript_types: /(SuperType)/,
+                  },
+                },
+              ],
+            }
+          },
           'gatsby-remark-autolink-headers',
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files'
         ]
       }

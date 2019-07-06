@@ -1,14 +1,14 @@
 ---
-layout:     post
-title:      在React中使用fortawesome
-subtitle:    
-date:       2018-02-13
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: 在React中使用fortawesome
+date: "2018-02-13T01:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/react_fortawesome/"
+category: "React"
 tags:
-    - React
-    - fortawesome
+    - "React"
+    - "fortawesome"
+description: "如何在React中使用fortawesome."
 ---
 
 #  在React中使用fortawesome
@@ -36,7 +36,7 @@ $ yarn add @fortawesome/react-fontawesome
 
 你可以在 React 组件中这样使用Font Awesome:
 
-```javascript
+```react
 <FontAwesomeIcon icon="coffee" />
 ```
 
@@ -75,7 +75,7 @@ $ yarn add @fortawesome/fontawesome-free-solid
 
 组件就可以像这样:
 
-```react
+```jsx
 import ReactDOM from 'react-dom'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/fontawesome-free-solid'
@@ -118,7 +118,7 @@ $ yarn add @fortawesome/fontawesome-free-brands
 
 在 app 被初始化的  ``App.js`` 中:
 
-```javascript
+```jsx
 import ReactDome from 'react-dom';
 import fontawesome from '@fortawesome/fontawesome'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -137,7 +137,7 @@ fontawesome.library.add(brands, faCheckSquare, faCoffee)
 
 假定在 app 中有两个 React 组件 ``Beverage`` ``Gadget`` . 你不需要重新在导入这些 icon , 只需要导入 ``FontAwesome``  组件 , 并在使用的时候 icon 属性上赋上icon 的名称即可 .
 
-```react
+```jsx
 import  React from 'react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
@@ -155,7 +155,7 @@ export default Beverage
 
 假定 ``Gadget.js`` 这样定义:
 
-```react
+```jsx
 import React from 'react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
@@ -207,7 +207,7 @@ export default Gadget
 
 现在你可以在任意 React 组件中使用这些导入的 icon: 
 
-```react
+```jsx
 <FontAwesomeIcon icon="coffee" />
 ```
 
@@ -221,32 +221,32 @@ export default Gadget
 
 Spin and pulse 动画:
 
-```react
+```jsx
 <FontAwesomeIcon icon="spinner" spin />
 <FontAwesomeIcon icon="spinner" pulse />
 ```
 
 Fixed width:
 
-```react
+```jsx
 <FontAwesomeIcon icon="spinner" fixedWidth />
 ```
 
 Border:
 
-```react
+```jsx
 <FontAwesomeIcon icon="spinner" border />
 ```
 
 List items:
 
-```react
+```jsx
 <FontAwesomeIcon icon="spinner" listItem />
 ```
 
 Flip horizontally, vertically, or both:
 
-```react
+```jsx
 <FontAwesomeIcon icon="spinner" flip="horizontal" />
 <FontAwesomeIcon icon="spinner" flip="vertical" />
 <FontAwesomeIcon icon="spinner" flip="both" />
@@ -254,7 +254,7 @@ Flip horizontally, vertically, or both:
 
 Size:
 
-```
+```jsx
 <FontAwesomeIcon icon="spinner" size="xs" />
 <FontAwesomeIcon icon="spinner" size="lg" />
 <FontAwesomeIcon icon="spinner" size="6x" />
@@ -262,7 +262,7 @@ Size:
 
 Rotate:
 
-```react
+```jsx
 <FontAwesomeIcon icon="spinner" rotate={90} />
 <FontAwesomeIcon icon="spinner" rotate={180} />
 <FontAwesomeIcon icon="spinner" rotate={270} />
@@ -270,14 +270,14 @@ Rotate:
 
 Pull left or right:
 
-```
+```jsx
 <FontAwesomeIcon icon="spinner" pull="left" />
 <FontAwesomeIcon icon="spinner" pull="right" />
 ```
 
 指定的 class names:
 
-```
+```jsx
 <FontAwesomeIcon icon="spinner" className="highlight" />
 ```
 
@@ -285,20 +285,20 @@ Pull left or right:
 
 Power Transforms:
 
-```react
+```jsx
 <FontAwesomeIcon icon="spinner" transform="shrink-6 left-4" />
 <FontAwesomeIcon icon="spinner" transform={{ rotate: 42 }} />
 ```
 
 Composition:
 
-```react
+```jsx
 <FontAwesomeIcon icon="coffee" mask={['far', 'circle']} />
 ```
 
 Symbols:
 
-```react
+```jsx
 <FontAwesomeIcon icon="edit" symbol />
 <FontAwesomeIcon icon="edit" symbol="edit-icon" />
 ```

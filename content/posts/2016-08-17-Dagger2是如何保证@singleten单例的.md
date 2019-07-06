@@ -1,14 +1,14 @@
 ---
-layout:     post
-title:      Dagger2是如何保证@singleten单例的
-subtitle:    
-date:       2016-08-17
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: Dagger2是如何保证@singleten单例的
+date: "2016-08-17T01:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/dagger_keep_single/"
+category: "Dagger"
 tags:
-    - Android
-    - Dagger2
+    - "Android"
+    - "Dagger2"
+description: "Dagger中的@singleten是如何保证注解的实例保证单例模式的?"
 ---
 
 ###提出问题

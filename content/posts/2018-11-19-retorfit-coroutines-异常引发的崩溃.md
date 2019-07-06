@@ -1,13 +1,14 @@
 ---
-layout:     post
-title:      Retrofit coroutines 异常引发的崩溃
-date:       2018-11-19
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: Retrofit coroutines 异常引发的崩溃
+date: "2018-11-19T00:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/retrofit_coroutinent_exception/"
+category: "Retrofit"
 tags:
-    - retrofit
-    - coroutines
+    - "Retrofit"
+    - "Coroutines"
+description: "最近项目中突然爆发了一波由网络超时造成的崩溃问题(之前也有过几次,但是没有引起足够的重视).花费了一天的时间终于解决了"
 ---
 
 最近项目中突然爆发了一波由网络超时造成的崩溃问题(之前也有过几次,但是没有引起足够的重视).花费了一天的时间终于解决了[开心]

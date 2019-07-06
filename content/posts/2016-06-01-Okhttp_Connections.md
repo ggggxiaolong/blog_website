@@ -1,15 +1,15 @@
 ---
-layout:     post
-title:      Okhttp
-subtitle:   Okhttp_Connections
-date:       2016-06-01
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: Okhttp Okhttp_Connections
+date: "2016-06-01T00:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/okhttp_okhttp_connections/"
+category: "Okhttp"
 tags:
-    - Android
-    - Okhttp
-    - 翻译
+    - "Android"
+    - "Okhttp"
+    - "翻译"
+description: "安卓开发中使用最多的网络请求库,通过翻译官方的文档来系统的学习一下.了解更多okhttp的功能,在使用这个库的时候能够更加的顺手,遇到问题的时候方便排查."
 ---
 
 ##Connections

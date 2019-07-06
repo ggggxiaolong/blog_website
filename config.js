@@ -22,14 +22,14 @@ module.exports = {
       label: 'Category',
       path: '/categories'
     },
-    {
-      label: 'About me',
-      path: '/pages/about'
-    },
-    {
-      label: 'Contact me',
-      path: '/pages/contacts'
-    }
+    // {
+    //   label: 'About me',
+    //   path: '/pages/about'
+    // },
+    // {
+    //   label: 'Contact me',
+    //   path: '/pages/contacts'
+    // }
   ],
   author: {
     name: 'Mr Tan',
@@ -43,7 +43,7 @@ module.exports = {
       rss: '#',
       vkontakte: '#',
       email: 'freemrtan@gmail.com',
-      telegram: 'ggggxiaolong',
+      telegram: '#',
       github: 'ggggxiaolong',
       jianshu: 'b8cddfa2e3e8'
     }

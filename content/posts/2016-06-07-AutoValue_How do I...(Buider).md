@@ -1,15 +1,15 @@
 ---
-layout:     post
-title:      AutoValue
-subtitle:   AutoValue_How do I...(Buider)
-date:       2016-06-07
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: AutoValue How do I…(Builder)
+date: "2016-06-07T01:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/autovalue_builder/"
+category: "AutoValue"
 tags:
-    - Android
-    - AutoValue
-    - 翻译
+    - "Android"
+    - "AutoValue"
+    - "翻译"
+description: "AutoValue是一个由谷歌出品的自动生成代码的库,可以通过AutoValue生成一些通用的代码(比如JavaBean)可以结合谷歌的另外一个库(Gson)使用.生成TypeAdapter从而避免反射.类似的库还有Immutable和Loobook"
 ---
 
 ##How do I ... (Builder edition)

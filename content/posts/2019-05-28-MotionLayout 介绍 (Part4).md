@@ -1,3 +1,16 @@
+---
+title: MotionLayout 介绍 (第四章)
+date: "2019-05-28T00:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/motionlayout_part_04"
+category: "Android"
+tags:
+    - "Android"
+    - "MotionLayout"
+    - "翻译"
+description: "MotionLayout  是 ConstrainLayout 2.0 库中被引入的一个新类，帮助安卓开发者关联手势和组件动画。接下来的文章将介绍会如何在应用中添加和使用 MotionLayout."
+---
 # MotionLayout 介绍 (Part4)
 
 MotionLayout 的动画系统是通过计算两个状态之间的插值（通常是组件的位置，大小）工作的。这些值可以使用 ConstraintLayout 的 Constraint 属性指定，也可以使用组件自己的属性。两个状态之间的转换可以由滑动事件驱动，事件系统一般会给你比较直观的感受。

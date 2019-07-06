@@ -1,15 +1,15 @@
 ---
-layout:     post
-title:      MotionLayout 介绍（Part 2）
-subtitle:    
-date:       2019-05-25
-author:     mrtan
-header-img: img/post-bg-home.webp
-catalog: true
+title: MotionLayout 介绍 (第二章)
+date: "2019-05-25T00:00:00.000Z"
+template: "post"
+draft: false
+slug: "/posts/motionlayout_part_02"
+category: "Android"
 tags:
-    - MotionLayout
-    - Android
-    - 翻译
+    - "Android"
+    - "MotionLayout"
+    - "翻译"
+description: "MotionLayout  是 ConstrainLayout 2.0 库中被引入的一个新类，帮助安卓开发者关联手势和组件动画。接下来的文章将介绍会如何在应用中添加和使用 MotionLayout."
 ---
 
 # MotionLayout 介绍（Part 2）
